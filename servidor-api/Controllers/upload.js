@@ -8,6 +8,7 @@ function upload(req, res) {
             while ( aguardar > new Date()) { }
 
             const imagem = req.files.imagem;
+            //gerar diretorio para salvar os uploads
             imagem.mv('./public/uploads/' + imagem.name);
             res.json({ path : `http://localhost:3001/uploads/${imagem.name}`});
         }
